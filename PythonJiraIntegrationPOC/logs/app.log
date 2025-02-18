@@ -11,3 +11,14 @@
 2025-02-18 23:44:55,925 - DEBUG - https://intswt.atlassian.net:443 "GET /rest/api/2/issue/UIUX-655 HTTP/1.1" 200 None
 2025-02-18 23:44:55,941 - INFO - Issue UIUX-655 retrieved successfully.
 2025-02-18 23:44:55,942 - INFO - Issue Details: UIUX-655
+2025-02-19 00:06:31,386 - INFO - Starting Jira API Integration...
+2025-02-19 00:06:32,578 - DEBUG - Starting new HTTPS connection (1): intswt.atlassian.net:443
+2025-02-19 00:06:33,147 - DEBUG - https://intswt.atlassian.net:443 "GET /rest/api/2/serverInfo HTTP/1.1" 200 None
+2025-02-19 00:06:33,149 - INFO - JiraClient initialized successfully.
+2025-02-19 00:06:33,149 - INFO - Creating issue: Test issue
+2025-02-19 00:06:33,722 - DEBUG - https://intswt.atlassian.net:443 "POST /rest/api/2/issue HTTP/1.1" 401 None
+2025-02-19 00:06:33,726 - ERROR - Failed to create issue: JiraError HTTP 401 url: https://intswt.atlassian.net/rest/api/2/issue
+	text: You do not have permission to create issues in this project.
+	
+	response headers = {'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Date': 'Tue, 18 Feb 2025 18:36:33 GMT', 'Server': 'AtlassianEdge', 'Timing-Allow-Origin': '*', 'X-Arequestid': '734c922cc7e901ef6291b7e8fd23b38a', 'X-Seraph-Loginreason': 'AUTHENTICATED_FAILED', 'Cache-Control': 'no-cache, no-store, no-transform', 'Www-Authenticate': 'OAuth realm="https%3A%2F%2Fintswt.atlassian.net"', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'Atl-Traceid': '3526fbc334684b18b12cb28c4dd07c85', 'Atl-Request-Id': '3526fbc3-3468-4b18-b12c-b28c4dd07c85', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload', 'Report-To': '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}', 'Nel': '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}', 'Server-Timing': 'atl-edge;dur=421,atl-edge-internal;dur=141,atl-edge-upstream;dur=280,atl-edge-pop;desc="aws-ap-south-1"', 'X-Cache': 'Error from cloudfront', 'Via': '1.1 42c5ae027ccde3a3511a5e388b43c7ae.cloudfront.net (CloudFront)', 'X-Amz-Cf-Pop': 'DEL54-P3', 'X-Amz-Cf-Id': 'F_T0czxxPoyT_pFeyRudT2s7iPAYeVoDQv-ek3b23tVBVBKF-j3nuw=='}
+	response text = {"errorMessages":["You do not have permission to create issues in this project."],"errors":{}}
