@@ -1,13 +1,27 @@
-from jira_client import JiraClient
+# main.py
+import sys
+import os
+from src.config import Config 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'src')))
+
+from src.issue_service import IssueService
 
 if __name__ == "__main__":
-    jira = JiraClient()
+    issue_service = IssueService()
 
-    # Create a JIRA issue
-    response = jira.create_issue("New Task Request", "Detailed Task description", "Task")
-    print("Created Issue:", response)
+    # Example: Create a new issue
+    summary = "Test issue"
+    description = "This is a test issue created via Python and Jira API."
+    issue_key = issue_service.create_new_issue(summary, description, Config.get("JIRA_PROJECT_KEY"), Config.get("TASK_TYPE"))
 
-    # Fetch issue details
-    issue_key = response.get("key", "UNKNOWN")
-    details = jira.get_issue_details(issue_key)
-    print("Issue Details:", details)
+    if issue_key:
+        print(f"Successfully created issue with key: {issue_key}")
+    else:
+        print("Issue creation failed.")
+
+    # Example: Fetch issue details
+    issue_details = issue_service.fetch_issue_details(issue_key)
+    if issue_details:
+        print(f"Issue details: {issue_details}")
+    else:
+        print("Failed to fetch issue details.")
