@@ -16,18 +16,14 @@ class IssueService:
         issue_key = self.jira_client.create_issue(summary, description, projectKey, taskType)
 
         if issue_key:
-            logging.info(f"Issue {issue_key} created successfully.")
             return issue_key
         else:
-            logging.error("Failed to create issue.")
             return None
 
     def fetch_issue_details(self, issue_key):
         """Fetches issue details."""
         issue_details = self.jira_client.get_issue_details(issue_key)
         if issue_details:
-            logging.info(f"Issue {issue_key} retrieved successfully.")
             return issue_details
         else:
-            logging.error("Failed to fetch issue details.")
             return None
